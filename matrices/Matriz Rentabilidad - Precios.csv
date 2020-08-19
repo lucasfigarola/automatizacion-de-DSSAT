@@ -1,0 +1,42 @@
+ID,Tipo,Producto,Cultivo,Unidad,Precio
+,Agroquímico,Glifosato,Todos,lt/ha,$2.40
+,Agroquímico,Roundup Full II,Todos,lt/ha,$4.50
+,Agroquímico,Texaro,Todos,kg/ha,$415.00
+,Agroquímico,Metsulfuron Metil,Todos,kg/ha,$24.00
+,Agroquímico,"2,4-D 100%",Todos,lt/ha,$5.90
+,Agroquímico,Inoculante + Fungicida,Todos,b 200 gr,$3.70
+,Agroquímico,Roudup Controlmax,Todos,kg/ha,$6.00
+,Agroquímico,Karate Zeon 5%,Todos,lt/ha,$14.40
+,Agroquímico,Coragen,Todos,kg/ha,$275.00
+,Agroquímico,Engeo,Todos,lt/ha,$51.00
+,Agroquímico,Opera,Todos,lt/ha,$30.50
+,Agroquímico,Tordon 24 K,Todos,lt/ha,$19.00
+,Agroquímico,Atrazina 90%,Todos,kg/ha,$6.80
+,Agroquímico,Guardian,Todos,lt/ha,$6.75
+,Agroquímico,Dual Gold,Todos,lt/ha,$12.10
+,Agroquímico,Exalt SC,Todos,lt/ha,$210.00
+,Agroquímico,Onduty,Todos,gr/ha,$123.00
+,Agroquímico,Roundup Ultramax,Todos,kg/ha,$6.00
+,Cosecha y comercialización,Cosecha,Soja,U$/ha,$65.00
+,Cosecha y comercialización,Flete,Todos,U$/tn,$29.72
+,Cosecha y comercialización,Impuestos y sellado,Soja,U$/tn,$5.00
+,Cosecha y comercialización,Paritaria,Todos,U$/tn,$2.93
+,Cosecha y comercialización,Secado,Todos,U$/tn,$6.45
+,Cosecha y comercialización,Zarandeo,Soja,U$/tn,$2.35
+,Cosecha y comercialización,Comision acopio,Soja,U$/tn,$5.86
+,Cosecha y comercialización,Comision acopio,Maiz,U$/tn,$3.46
+,Cosecha y comercialización,Impuestos y sellado,Maiz,U$/tn,$2.95
+,Cosecha y comercialización,Cosecha,Maiz,U$/ha,$83.00
+,Cultivo,Maiz,Maiz,U$/tn,$173.00
+,Cultivo,Soja,Soja,U$/tn,$293.00
+,Cultivo,Trigo,Trigo,U$/tn,$192.00
+,Fertilizante,Superfosfato Triple,Todos,kg/ha,$0.48
+,Fertilizante,Fosfato Monoamonico,Todos,kg/ha,$0.57
+,Fertilizante,Urea,Todos,kg/ha,$0.43
+,Labores,Siembra Directa + Fertilizacion,Todos,U$/ha,$33.50
+,Labores,Pulverización terrestre,Todos,U$/ha,$4.60
+,Labores,Pulverización aérea,Todos,U$/ha,$9.10
+,Labores,Fertilizacion,Todos,U$/ha,$7.60
+,Semilla,Semilla RR,Soja,kg/ha,$0.62
+,Semilla,Semilla MG RR,Maiz,bls/ha,$162.00
+,UTA,UTA,Todos,U$/ha,$30.50
