@@ -4,9 +4,6 @@ import csv
 def calculate_values_for_graphics(name_input,cultivos,coefficients,nivel_tecnologico,first_year):
     #----------- calcula los valores de Rendimiento, Rentabilidad y Emergy para graficar  ----------
 
-    #----------- obtengo todos los costos para un nivel tecnologico -------------
-    costos = get_all_costos(nivel_tecnologico)
-
     cant_years_to_evalue = 4
 
     for i in range(cant_years_to_evalue):

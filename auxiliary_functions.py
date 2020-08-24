@@ -39,84 +39,6 @@ def there_is_performance_on_the_line(line):
     return b    
 
 
-#------------ obtengo los ripests de todos los cultivos -----------------
-def get_all_ripests():
-    ripests_utins = {}
-    ripests_utmam = {}
-    path = os.path.join(my_path, "matrices/RIPEST - UT cultivos.csv")
-    with open(path) as f:
-        reader = csv.reader(f)
-        cant_nivel_tecnologico = 3  # cantidad de niveles tecnologicos
-        for l in reader:
-            if 'Bajo' in l:
-                crop = l[0]
-                ripests_utins[crop] = []
-                ripests_utmam[crop] = []
-                utins = l[2]
-                ripests_utins[crop].append(utins)
-                utmam = l[3]
-                ripests_utmam[crop].append(utmam)
-            if 'Medio' in l:
-                crop = l[0]
-                utins = l[2]
-                ripests_utins[crop].append(utins)
-                utmam = l[3]
-                ripests_utmam[crop].append(utmam)
-            if 'Alto' in l:
-                crop = l[0]
-                utins = l[2]
-                ripests_utins[crop].append(utins)
-                utmam = l[3]
-                ripests_utmam[crop].append(utmam)
-    ripests = []
-    ripests.append(ripests_utins)
-    ripests.append(ripests_utmam)
-    return ripests 
-
-
-#------------ obtengo los precios de todos los cultivos -----------------
-def get_all_prices():
-    prices = {}
-    path = os.path.join(my_path, "matrices/Matriz Rentabilidad - Precios.csv")
-    with open(path) as f:
-        reader = csv.reader(f)
-        for l in reader:
-            if 'Cultivo' in l:
-                if 'Maiz' in l:
-                    price = l[5]
-                    price = float(price[1:])
-                    prices['Maiz'] = price
-                if 'Soja' in l:
-                    price = l[5]
-                    price = float(price[1:])  
-                    prices['Soja'] = price 
-                if 'Girasol' in l:
-                    price = l[5]
-                    price = float(price[1:])   
-                    prices['Girasol'] = price   
-                if 'Trigo' in l:
-                    price = l[5]
-                    price = float(price[1:])   
-                    prices['Trigo'] = price 
-                if 'Soja2' in l:
-                    price = l[5]
-                    price = float(price[1:])   
-                    prices['Soja2'] = price 
-    return prices  
-
-
-#------------ obtengo el precio del cultivo que esta en la linea -----------------
-def get_price_of_the_line(line,prices):
-    price = 0
-    if 'MZ' in line:
-        price =  prices['Maiz']
-    if 'SB' in line:
-        price =  prices['Soja']
-    if 'WH' in line:
-        price =  prices['Trigo']
-    return price      
-
-
 #------------ obtengo los coeficientes de todos los cultivos para un nivel tecnologico -----------------
 def get_all_coefficients():
     coefficients = {}
@@ -165,47 +87,6 @@ def get_coefficient_of_the_line(line,coefficients,nivel_tecnologico):
     return float(coefficient[nivel_tecnologico])  
 
 
-#------------ obtengo los costos de todos los cultivos para un nivel tecnologico -----------------
-def get_all_costos(nivel_tecnologico):
-    costos = {}    
-    path = os.path.join(my_path, "matrices/Matriz Rentabilidad - Estructura de gastos.csv")
-    with open(path) as f:
-        reader = csv.reader(f)
-        for l in reader:
-            if 'Maiz' in l:
-                costo = l[nivel_tecnologico+6]
-                costo = float(costo[1:])
-                costos['Maiz'] = costo           
-            if 'Soja' in l:
-                costo = l[nivel_tecnologico+6]
-                costo = float(costo[1:])
-                costos['Soja'] = costo  
-            if 'Girasol' in l:
-                costo = l[nivel_tecnologico+6]
-                costo = float(costo[1:])
-                costos['Girasol'] = costo
-            if 'Trigo' in l:
-                costo = l[nivel_tecnologico+6]
-                costo = float(costo[1:])
-                costos['Trigo'] = costo
-            if 'Soja2' in l:
-                costo = l[nivel_tecnologico+6]
-                costo = float(costo[1:])
-                costos['Soja2'] = costo
-    return costos
-
-
-#------------ obtengo el costo del cultivo que esta en la linea -----------------
-def get_costo_of_the_line(line,costos):
-    costo = 0
-    if 'MZ' in line:
-        costo =  costos['Maiz']
-    if 'SB' in line:
-        costo =  costos['Soja']
-    if 'WH' in line:
-        costo =  costos['Trigo']
-    return float(costo)  
-
 #-------------- conseguir el i-esimo cultivo del input ---------------
 def get_cultivo(name_input,num_cultivo):
     f= open('C:/DSSAT47/Sequence/' + name_input + '.SQX','r')
@@ -222,6 +103,7 @@ def get_cultivo(name_input,num_cultivo):
             checker = True
     f.close()
     return crop
+
 
 #-------------- conseguir el primer año del input ---------------
 def get_FirstYear(inputName):
