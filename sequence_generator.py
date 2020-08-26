@@ -191,7 +191,7 @@ def read_list():
     #print(list_words)
 
 
-sequenceGenerator()
+#sequenceGenerator()
 #convertir_matriz()
 #crear_dicc_index()
 #read_list()
