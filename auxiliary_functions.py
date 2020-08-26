@@ -415,3 +415,27 @@ def calculate_soil_damage(l):
     topwt = int(l.split()[5])
     soil_damage = (topwt - performance)/1000 
     return soil_damage
+
+
+def not_repeated(crop_sequence,list_sequences):
+    for i in range(len(list_sequences)):
+        if equal(crop_sequence,list_sequences[i]):
+            return False
+    return True
+
+
+def equal(crop_sequence1,crop_sequence2):
+    for i in range(len(crop_sequence2)):
+        if equal_with_different_beginning(crop_sequence1,crop_sequence2,i):
+            return True
+    return False
+
+
+def equal_with_different_beginning(crop_sequence1,crop_sequence2,index2):
+    for index1 in range(len(crop_sequence1)):
+        if index2 == len(crop_sequence2):
+            index2 = 0
+        if crop_sequence1[index1] != crop_sequence2[index2]:
+            return False
+        index2 += 1
+    return True

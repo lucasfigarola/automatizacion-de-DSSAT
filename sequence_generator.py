@@ -2,6 +2,7 @@ import csv
 from setup import *
 from numpy import genfromtxt
 from crop import *
+from auxiliary_functions import *
 
 
 def sequenceGenerator():
@@ -24,15 +25,16 @@ def sequenceGenerator():
     simple_crops.append(soja)
     simple_crops.append(maiz)
     simple_crops.append(trigo)
-    simple_crops.append(girasol)
-    simple_crops.append(colza)
-    simple_crops.append(arveja)
-    simple_crops.append(soja2)
-    simple_crops.append(maiz2)
+    #simple_crops.append(girasol)
+    #simple_crops.append(colza)
+    #simple_crops.append(arveja)
+    #simple_crops.append(soja2)
+    #simple_crops.append(maiz2)
 
 
     #--------- creacion de cultivos dobles ------------
-    cultivos = ['Soja','Maiz','Girasol','Trigo','Soja2','Maiz2','Colza','Arveja']
+    #cultivos = ['Soja','Maiz','Girasol','Trigo','Soja2','Maiz2','Colza','Arveja']
+    cultivos = ['Soja','Maiz','Trigo','Soja2']
     matriz_de_restricciones = convertir_matriz()
     dicc_index = crear_dicc_index()
     double_crops = []
@@ -58,9 +60,10 @@ def sequenceGenerator():
             crop_sequence = get_list_crop(secuencia)
             if len(crop_sequence) not in dicc_sequence:
                 dicc_sequence[len(crop_sequence)] = []
-            dicc_sequence[len(crop_sequence)].append(crop_sequence)
-            out.write(str(crop_sequence) + '\n')
-            contador += 1
+            if not_repeated(crop_sequence,dicc_sequence[len(crop_sequence)]):
+                dicc_sequence[len(crop_sequence)].append(crop_sequence)
+                out.write(str(crop_sequence) + '\n')
+                contador += 1
 
     for i in range(len(all_crops)):
         for j in range(len(all_crops)):
@@ -69,9 +72,10 @@ def sequenceGenerator():
                 crop_sequence = get_list_crop(secuencia)
                 if len(crop_sequence) not in dicc_sequence:
                     dicc_sequence[len(crop_sequence)] = []
-                dicc_sequence[len(crop_sequence)].append(crop_sequence)
-                out.write(str(crop_sequence) + '\n')
-                contador += 1
+                if not_repeated(crop_sequence,dicc_sequence[len(crop_sequence)]):
+                    dicc_sequence[len(crop_sequence)].append(crop_sequence)
+                    out.write(str(crop_sequence) + '\n')
+                    contador += 1
 
     for i in range(len(all_crops)):
         for j in range(len(all_crops)):
@@ -81,9 +85,10 @@ def sequenceGenerator():
                     crop_sequence = get_list_crop(secuencia)
                     if len(crop_sequence) not in dicc_sequence:
                         dicc_sequence[len(crop_sequence)] = []
-                    dicc_sequence[len(crop_sequence)].append(crop_sequence)
-                    out.write(str(crop_sequence) + '\n')
-                    contador += 1
+                    if not_repeated(crop_sequence,dicc_sequence[len(crop_sequence)]):
+                        dicc_sequence[len(crop_sequence)].append(crop_sequence)
+                        out.write(str(crop_sequence) + '\n')
+                        contador += 1
 
     for i in range(len(all_crops)):
         for j in range(len(all_crops)):
@@ -94,9 +99,10 @@ def sequenceGenerator():
                         crop_sequence = get_list_crop(secuencia)
                         if len(crop_sequence) not in dicc_sequence:
                             dicc_sequence[len(crop_sequence)] = []
-                        dicc_sequence[len(crop_sequence)].append(crop_sequence)
-                        out.write(str(crop_sequence) + '\n')
-                        contador += 1
+                        if not_repeated(crop_sequence,dicc_sequence[len(crop_sequence)]):
+                            dicc_sequence[len(crop_sequence)].append(crop_sequence)
+                            out.write(str(crop_sequence) + '\n')
+                            contador += 1
     
     print(contador)
     #print(dicc_sequence[2])
@@ -185,7 +191,7 @@ def read_list():
     #print(list_words)
 
 
-#sequenceGenerator()
+sequenceGenerator()
 #convertir_matriz()
 #crear_dicc_index()
 #read_list()
