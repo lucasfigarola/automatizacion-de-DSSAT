@@ -13,25 +13,27 @@ def promedio(iterable):
 
 
 #----------- crea un nueva copia del input  ----------
-def copy_txt(name_input,cultivos,num_nivel_tecnologico):
+def copy_SQX(name_input,crops,num_nivel_tecnologico):
     f= open("C:/DSSAT47/Sequence/" + name_input + ".SQX","r")
     lines = f.readlines()
-    sequence = get_sequence_name(cultivos)
+    sequence = get_sequence_name(crops)
     name_nivel_tecnologico = get_name_nivel_tecnologico(num_nivel_tecnologico)
-    out = open('C:/DSSAT47/Sequence/' + name_input + '_' + sequence + '_' + name_nivel_tecnologico + '.SQX', 'w')
+    path = os.path.join(my_path, 'results_files/input/'+ name_input + '_' + sequence + '_' + name_nivel_tecnologico + '.SQX')
+    out = open(path,'w')
     out.writelines(lines)
     out.close()
 
 
 #----------- crea un nueva copia del output  ----------
-def copy_out(cultivos,num_nivel_tecnologico):
+def copy_out(crops,num_nivel_tecnologico):
     f= open("C:/DSSAT47/Sequence/output.txt","r")
     lines = f.readlines()
-    sequence = get_sequence_name(cultivos)
+    sequence = get_sequence_name(crops)
     name_nivel_tecnologico = get_name_nivel_tecnologico(num_nivel_tecnologico)
-    out = open('C:/DSSAT47/Sequence/output' + '_' + sequence + '_' + name_nivel_tecnologico + '.txt', 'w')
+    path = os.path.join(my_path, 'results_files/output/output'+ '_' + sequence + '_' + name_nivel_tecnologico + '.txt')
+    out = open(path, 'w')
     out.writelines(lines)
-    out.close()    
+    out.close()     
 
 
 def there_is_performance_on_the_line(line):

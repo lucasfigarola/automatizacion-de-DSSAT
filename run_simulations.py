@@ -26,7 +26,7 @@ def run_varying_ferlitizer(nombre_input,cultivos,coefficients,niveles_tecnologic
     nivel_tecnologico = 0
     first_year = get_FirstYear(nombre_input)
     for nivel_tecnologico in range(cant_nivel_tecnologico):
-        print(actuales_valores_fertilizantes)
+        print('Valores de fertilizante: ', actuales_valores_fertilizantes)
         for i, l in enumerate(lines):
             info = l.split() 
             if checker and info[11] in cultivos:
@@ -44,7 +44,7 @@ def run_varying_ferlitizer(nombre_input,cultivos,coefficients,niveles_tecnologic
         out = open('C:/DSSAT47/Sequence/' + nombre_input + '.SQX', 'w')
         out.writelines(lines)
         out.close()
-        copy_txt(nombre_input,cultivos,nivel_tecnologico)
+        copy_SQX(nombre_input,cultivos,nivel_tecnologico)
         dssat_run()
         copy_out(cultivos,nivel_tecnologico)
         calculate_values_for_graphics(nombre_input,cultivos,coefficients,nivel_tecnologico,first_year)
