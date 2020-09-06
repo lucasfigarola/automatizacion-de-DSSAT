@@ -317,10 +317,19 @@ def add_linea_SQX(nombre_input, numero_linea):
 def add_linea_Batch(nombre_input, numero_linea):
     f= open("C:/DSSAT47/DSSBatch.v47","r")
     lines = f.readlines()
+    checker = False
+    for i, l in enumerate(lines):
+        info = l.split()
+        if checker and len(l.strip()) != 0:
+            new_line = l
+            checker = False
+        if '@FILEX' in l:
+            checker = True
     f.close()
     line_filex = 12 + numero_linea
-    lines.insert(line_filex,'C:\\DSSAT47\\Sequence\\' + nombre_input + '.SQX' + '                                                               1      1      ' + str(numero_linea+1) + '      1      0\n')
-    #lines.insert(14,r'C:\DSSAT47\Sequence\U' + 'BAR2001.SQX                                                                 1      1      ' + str(numero_linea+1) + '      1      0\n')
+    new_line = new_line[:112] + str(numero_linea+1) + l[113:]
+    lines.insert(line_filex,new_line)
+    #lines.insert(line_filex,'C:\\DSSAT47\\Sequence\\' + nombre_input + '.SQX' + '                                                               1      1      ' + str(numero_linea+1) + '      1      0\n')
 
     f= open("C:/DSSAT47/DSSBatch.v47","w")
     f.writelines(lines)

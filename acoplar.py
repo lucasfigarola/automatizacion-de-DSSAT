@@ -14,11 +14,12 @@ def modifier_batch(new_name_sqx):
     f= open("C:/DSSAT47/DSSBatch.v47","r")
     lines = f.readlines()
     checker = False
+    new_name_sqx_with_spaces = new_name_sqx.ljust(30)
     #--------- obtener el nombre y carpeta del viejo txt ----------------
     for i, l in enumerate(lines):
         info = l.split()
         if checker and len(l.strip()) != 0:
-            lines[i] = l[:20] + new_name_sqx + l[20+len(new_name_sqx):]
+            lines[i] = l[:20] + new_name_sqx_with_spaces + l[20+len(new_name_sqx_with_spaces):]
         if 'Experiment' in l:    
             lines[i] = l[:17] + new_name_sqx + '\n' #+ l[17+len(new_name_sqx):]
         if '@FILEX' in l:
