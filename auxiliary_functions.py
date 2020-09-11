@@ -297,17 +297,17 @@ def create_line_cultivo(l,crop_name,cultivo_ids):
     return line
 
 
-def add_line(nombre_input, numero_linea):
-    add_linea_SQX(nombre_input, numero_linea)
-    add_linea_Batch(nombre_input, numero_linea)
+def add_line(nombre_input,numero_linea,line_treatments):
+    add_linea_SQX(nombre_input,numero_linea,line_treatments)
+    add_linea_Batch(nombre_input,numero_linea)
 
 
-def add_linea_SQX(nombre_input, numero_linea):
+def add_linea_SQX(nombre_input,numero_linea,line_treatments):
     f = open('C:/DSSAT47/Sequence/' + nombre_input + '.SQX','r')
     lines = f.readlines()
     f.close()
 
-    lines.insert(12+numero_linea,' 1 ' + str(numero_linea+1) + ' 1 0 Maiz                       2  1  0  1  2  0  2  0  0  0  0  0  2\n')
+    lines.insert(line_treatments+2+numero_linea,' 1 ' + str(numero_linea+1) + ' 1 0 Maiz                       2  1  0  1  2  0  2  0  0  0  0  0  2\n')
 
     f = open('C:/DSSAT47/Sequence/' + nombre_input + '.SQX','w')
     f.writelines(lines)
@@ -335,6 +335,17 @@ def add_linea_Batch(nombre_input, numero_linea):
     f.writelines(lines)
     f.close()
 
+
+def num_line_TREATMENTS(name_input):
+    f= open('C:/DSSAT47/Sequence/' + name_input + '.SQX','r')
+    lines = f.readlines()
+    current_num_line = 0
+    for i, l in enumerate(lines):
+        if '*TREATMENTS' in l: 
+            break
+        current_num_line += 1
+    f.close()
+    return current_num_line
 
 def get_sequence_name(cultivos):
     name_sequence = ''

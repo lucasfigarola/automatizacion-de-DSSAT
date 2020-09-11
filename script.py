@@ -17,9 +17,9 @@ def script_sequences(name_input):
     copy_input(name_input_original,name_input)
     modify_batch(name_input)
 
+    line_treatments = num_line_TREATMENTS(name_input_original)
     crop_ids = create_dicc_ids(name_input)
     coefficients = get_all_coefficients()
-
     first_year = get_FirstYear(name_input)
     dicc_sequence = sequenceGenerator()
     num_line = 2
@@ -29,9 +29,7 @@ def script_sequences(name_input):
             crops = sequences[j]
             print(crops)
             total_function(name_input,crops,crop_ids,coefficients)
-        add_line(name_input, num_line)
-        num_line += 1
-        add_line(name_input, num_line)
+        add_line(name_input,num_line,line_treatments)
         num_line += 1
 
 
@@ -41,11 +39,10 @@ def run_generator_sequences(input_name):
     input_name = input_name + 'aux'
     copy_input(input_name_original,input_name)
     modify_batch(input_name)
-    copy_batch()
 
+    line_treatments = num_line_TREATMENTS(input_name_original)
     cultivo_ids = create_dicc_ids(input_name)
     coefficients = get_all_coefficients()
-
     first_year = get_FirstYear(input_name)
 
     cultivos = ['Soja','Barbecho']
@@ -55,17 +52,17 @@ def run_generator_sequences(input_name):
     total_function(input_name,cultivos,cultivo_ids,coefficients)
 
     cultivos = ['Trigo','Barbecho']
-    total_function(input_name,cultivos,cultivo_ids,coefficients)
+    #total_function(input_name,cultivos,cultivo_ids,coefficients)
 
 
     numero_linea = 2
-    add_line(input_name, numero_linea)
+    add_line(input_name,numero_linea,line_treatments)
     numero_linea += 1
 
     cultivos = ['Trigo','Soja2','Barbecho']
     total_function(input_name,cultivos,cultivo_ids,coefficients)
 
-    add_line(input_name, numero_linea)
+    add_line(input_name,numero_linea,line_treatments)
     numero_linea += 1
 
     cultivos = ['Maiz','Barbecho','Soja','Barbecho']
@@ -77,16 +74,16 @@ def run_generator_sequences(input_name):
     cultivos = ['Maiz','Barbecho','Trigo','Barbecho']
     #total_function(input_name,cultivos,cultivo_ids,coefficients)
 
-    add_line(input_name, numero_linea)
+    add_line(input_name,numero_linea,line_treatments)
     numero_linea += 1
-    add_line(input_name, numero_linea)
+    add_line(input_name,numero_linea,line_treatments)
     numero_linea += 1
 
     cultivos = ['Maiz','Barbecho','Trigo','Barbecho','Soja','Barbecho']
     total_function(input_name,cultivos,cultivo_ids,coefficients)
 
     cultivos = ['Trigo','Soja2','Barbecho','Trigo','Soja2','Barbecho']
-    total_function(input_name,cultivos,cultivo_ids,coefficients)
+    #total_function(input_name,cultivos,cultivo_ids,coefficients)
 
 
 
