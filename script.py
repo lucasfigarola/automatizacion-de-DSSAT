@@ -11,11 +11,11 @@ import glob
 
 
 def script_sequences(name_input):
+    create_batch()
     name_input_original = name_input
     name_input = name_input + 'aux'
     copy_input(name_input_original,name_input)
     modify_batch(name_input)
-    copy_batch()
 
     crop_ids = create_dicc_ids(name_input)
     coefficients = get_all_coefficients()
@@ -34,11 +34,9 @@ def script_sequences(name_input):
         add_line(name_input, num_line)
         num_line += 1
 
-    restore_batch()
-
 
 def run_generator_sequences(input_name):
-
+    create_batch()
     input_name_original = input_name
     input_name = input_name + 'aux'
     copy_input(input_name_original,input_name)
@@ -79,25 +77,21 @@ def run_generator_sequences(input_name):
     cultivos = ['Maiz','Barbecho','Trigo','Barbecho']
     #total_function(input_name,cultivos,cultivo_ids,coefficients)
 
-
     add_line(input_name, numero_linea)
     numero_linea += 1
     add_line(input_name, numero_linea)
     numero_linea += 1
 
-    #cultivos = ['Maiz','Barbecho','Trigo','Barbecho','Soja','Barbecho']
+    cultivos = ['Maiz','Barbecho','Trigo','Barbecho','Soja','Barbecho']
     total_function(input_name,cultivos,cultivo_ids,coefficients)
 
     cultivos = ['Trigo','Soja2','Barbecho','Trigo','Soja2','Barbecho']
     total_function(input_name,cultivos,cultivo_ids,coefficients)
 
-    restore_batch()
 
 
-def total_function(input_name,crops,crop_ids,coefficients):
-    #input_name_original = crear_backup_input(input_name)  # crear backup del input    
+def total_function(input_name,crops,crop_ids,coefficients):   
     run_for_different_tech_levels(input_name,crops,crop_ids,coefficients)
-    #graficar_todos_los_resultados()
 
 
 def run_for_different_tech_levels(input_name,crops,crop_ids,coefficients):
@@ -114,5 +108,5 @@ def crear_backup_input(nombre_input):
     return input_name_original
 
 
-#script_sequences('UBAR2002')
+#script_sequences('UBAR2004')
 run_generator_sequences('UBAR2004')

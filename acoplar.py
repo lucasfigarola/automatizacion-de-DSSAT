@@ -51,8 +51,8 @@ def copy_batch():
     out.writelines(lines)
     out.close()    
 
-def restore_batch():
-    path = os.path.join(my_path, "backup/DSSBatch.v47")
+def create_batch():
+    path = os.path.join(my_path, "batch/DSSBatch.v47")
     f= open(path,'r')
     lines = f.readlines()
     out = open('C:/DSSAT47/DSSBatch.v47', 'w')
