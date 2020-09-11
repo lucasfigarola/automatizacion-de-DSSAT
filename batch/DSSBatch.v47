@@ -1,0 +1,12 @@
+$BATCH(SEQUENCE)
+!
+! Directory    : C:\DSSAT47\Sequence
+! Command Line : C:\DSSAT47\DSCSM047.EXE Q DSSBatch.v47
+! Crop         : Sequence        
+! Experiment   : a.SQX
+! ExpNo        : 1
+! Debug        : C:\DSSAT47\DSCSM047.EXE " Q DSSBatch.v47"
+!
+@FILEX                                                                                        TRTNO     RP     SQ     OP     CO
+C:\DSSAT47\Sequence\a.SQX                                                                         1      1      1      1      0
+C:\DSSAT47\Sequence\a.SQX                                                                         1      1      2      1      0
