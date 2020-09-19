@@ -306,15 +306,18 @@ def add_linea_SQX(nombre_input,numero_linea,line_treatments):
     f = open('C:/DSSAT47/Sequence/' + nombre_input + '.SQX','r')
     lines = f.readlines()
     f.close()
+    if numero_linea < 9:
+        lines.insert(line_treatments+2+numero_linea,' 1 ' + str(numero_linea+1) + ' 1 0 Maiz                       2  1  0  1  2  0  2  0  0  0  0  0  2\n')
+    else:
+        lines.insert(line_treatments+2+numero_linea,' 1' + str(numero_linea+1) + ' 1 0 Maiz                       2  1  0  1  2  0  2  0  0  0  0  0  2\n')
 
-    lines.insert(line_treatments+2+numero_linea,' 1 ' + str(numero_linea+1) + ' 1 0 Maiz                       2  1  0  1  2  0  2  0  0  0  0  0  2\n')
 
     f = open('C:/DSSAT47/Sequence/' + nombre_input + '.SQX','w')
     f.writelines(lines)
     f.close()
 
 
-def add_linea_Batch(nombre_input, numero_linea):
+def add_linea_Batch(nombre_input,numero_linea):
     f= open("C:/DSSAT47/DSSBatch.v47","r")
     lines = f.readlines()
     checker = False
@@ -327,8 +330,13 @@ def add_linea_Batch(nombre_input, numero_linea):
             checker = True
     f.close()
     line_filex = 12 + numero_linea
-    new_line = new_line[:112] + str(numero_linea+1) + l[113:]
-    lines.insert(line_filex,new_line)
+    if numero_linea < 9:
+        new_line = new_line[:112] + str(numero_linea+1) + l[113:]
+        lines.insert(line_filex,new_line)
+    else:
+        new_line = new_line[:111] + str(numero_linea+1) + l[113:]
+        lines.insert(line_filex,new_line)
+
     #lines.insert(line_filex,'C:\\DSSAT47\\Sequence\\' + nombre_input + '.SQX' + '                                                               1      1      ' + str(numero_linea+1) + '      1      0\n')
 
     f= open("C:/DSSAT47/DSSBatch.v47","w")
