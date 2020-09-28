@@ -6,8 +6,8 @@ import re
 #----------- corre DSSAT ----------
 def dssat_run():
     output = open("C:/DSSAT47/Sequence/output.txt","w")
-    subprocess.check_call(["C:/DSSAT47/DSCSM047.EXE","","Q","C:/DSSAT47/DSSBatch.v47"], shell=True, stdout=output)
-    #subprocess.check_call(["C:/DSSAT47/DSCSM047.EXE","","Q","C:/DSSAT47/DSSBatch.v47","C:/DSSAT47/DSCSM047.CTR"], stdout=output)
+    path = os.path.join(my_path, 'results_files/temporary_files')
+    subprocess.check_call(["C:/DSSAT47/DSCSM047.EXE","","Q","C:/DSSAT47/DSSBatch.v47"], shell=True, cwd=path, stdout=output)
 
 #----------- modifica el archivo batch ----------
 def modifier_batch(new_name_sqx):
@@ -74,8 +74,5 @@ def change_name(old_crop_name,new_crop_name):
     out.writelines(lines)
     out.close()
     
-#name1 = 'ITHY7502.SQX'
-#name2 = 'Sequence'
-
-#modify_batch(name1,name2)    
+   
 #dssat_run()

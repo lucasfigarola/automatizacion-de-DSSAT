@@ -20,7 +20,6 @@ def script_sequences(name_input):
     line_treatments = num_line_TREATMENTS(name_input_original)
     crop_ids = create_dicc_ids(name_input)
     coefficients = get_all_coefficients()
-    first_year = get_FirstYear(name_input)
     dicc_sequence = sequenceGenerator()
     num_line = 2
     for i in range(2,13):
@@ -43,16 +42,15 @@ def run_generator_sequences(input_name):
     line_treatments = num_line_TREATMENTS(input_name_original)
     cultivo_ids = create_dicc_ids(input_name)
     coefficients = get_all_coefficients()
-    first_year = get_FirstYear(input_name)
 
     cultivos = ['Soja','Barbecho']
-    #total_function(input_name,cultivos,cultivo_ids,coefficients)
+    total_function(input_name,cultivos,cultivo_ids,coefficients)
 
     cultivos = ['Maiz','Barbecho']
-    #total_function(input_name,cultivos,cultivo_ids,coefficients)
+    total_function(input_name,cultivos,cultivo_ids,coefficients)
 
     cultivos = ['Trigo','Barbecho']
-    #total_function(input_name,cultivos,cultivo_ids,coefficients)
+    total_function(input_name,cultivos,cultivo_ids,coefficients)
 
 
     numero_linea = 2
@@ -66,7 +64,7 @@ def run_generator_sequences(input_name):
     numero_linea += 1
 
     cultivos = ['Maiz','Barbecho','Soja','Barbecho']
-    #total_function(input_name,cultivos,cultivo_ids,coefficients)
+    total_function(input_name,cultivos,cultivo_ids,coefficients)
 
     cultivos = ['Soja','Barbecho','Trigo','Barbecho']
     #total_function(input_name,cultivos,cultivo_ids,coefficients)
@@ -80,27 +78,10 @@ def run_generator_sequences(input_name):
     numero_linea += 1
 
     cultivos = ['Maiz','Barbecho','Trigo','Barbecho','Soja','Barbecho']
-    #total_function(input_name,cultivos,cultivo_ids,coefficients)
+    total_function(input_name,cultivos,cultivo_ids,coefficients)
 
     cultivos = ['Trigo','Soja2','Barbecho','Trigo','Soja2','Barbecho']
     #total_function(input_name,cultivos,cultivo_ids,coefficients)
-
-    add_line(input_name,numero_linea,line_treatments)
-    numero_linea += 1
-    add_line(input_name,numero_linea,line_treatments)
-    numero_linea += 1
-    add_line(input_name,numero_linea,line_treatments)
-    numero_linea += 1
-    add_line(input_name,numero_linea,line_treatments)
-    numero_linea += 1
-    add_line(input_name,numero_linea,line_treatments)
-    numero_linea += 1
-    add_line(input_name,numero_linea,line_treatments)
-    numero_linea += 1
-    add_line(input_name,numero_linea,line_treatments)
-    numero_linea += 1
-    add_line(input_name,numero_linea,line_treatments)
-    numero_linea += 1
 
 
 
@@ -122,5 +103,5 @@ def crear_backup_input(nombre_input):
     return input_name_original
 
 
-#script_sequences('UBAR2004')
-run_generator_sequences('UBAR2004')
+script_sequences('UBAR2004')
+#run_generator_sequences('UBAR2004')

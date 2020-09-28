@@ -17,14 +17,14 @@ def varying_technological_level(input_name,cultivos,cultivo_ids,coefficients):
     run_varying_ferlitizer(input_name,cultivos,coefficients,niveles_tecnologicos_bajos,niveles_tecnologicos_altos,valores_fertilizantes_incrementales)
 
 
-def run_varying_ferlitizer(nombre_input,cultivos,coefficients,niveles_tecnologicos_bajos,niveles_tecnologicos_altos,valores_fertilizantes_incrementales):
-    f= open('C:/DSSAT47/Sequence/' + nombre_input + '.SQX','r')
+def run_varying_ferlitizer(name_input,cultivos,coefficients,niveles_tecnologicos_bajos,niveles_tecnologicos_altos,valores_fertilizantes_incrementales):
+    f= open('C:/DSSAT47/Sequence/' + name_input + '.SQX','r')
     lines = f.readlines()
     actuales_valores_fertilizantes = niveles_tecnologicos_bajos
     checker = False
     cant_nivel_tecnologico = 3
     nivel_tecnologico = 0
-    first_year = get_FirstYear(nombre_input)
+    first_year = get_FirstYear(name_input)
     for nivel_tecnologico in range(cant_nivel_tecnologico):
         print('Valores de fertilizante: ', actuales_valores_fertilizantes)
         for i, l in enumerate(lines):
@@ -41,13 +41,13 @@ def run_varying_ferlitizer(nombre_input,cultivos,coefficients,niveles_tecnologic
                 checker = False
             if 'FAMN' in l: 
                 checker = True
-        out = open('C:/DSSAT47/Sequence/' + nombre_input + '.SQX', 'w')
+        out = open('C:/DSSAT47/Sequence/' + name_input + '.SQX', 'w')
         out.writelines(lines)
         out.close()
-        copy_SQX(nombre_input,cultivos,nivel_tecnologico)
+        copy_SQX(name_input,cultivos,nivel_tecnologico)
         dssat_run()
-        copy_out(cultivos,nivel_tecnologico)
-        calculate_values_for_graphics(nombre_input,cultivos,coefficients,nivel_tecnologico,first_year)
+        copy_out(name_input,cultivos,nivel_tecnologico)
+        calculate_values_for_graphics(name_input,cultivos,coefficients,nivel_tecnologico,first_year)
         actuales_valores_fertilizantes = actualizar_valores_fertilizantes(actuales_valores_fertilizantes,valores_fertilizantes_incrementales)
     graficar_resultados(cultivos)
 

@@ -12,6 +12,9 @@ def promedio(iterable):
     return result    
 
 
+def get_the_last_8_characters_SQX(name_input):
+    return name_input[-8:]
+
 #----------- crea un nueva copia del input  ----------
 def copy_SQX(name_input,crops,num_nivel_tecnologico):
     f= open("C:/DSSAT47/Sequence/" + name_input + ".SQX","r")
@@ -25,21 +28,32 @@ def copy_SQX(name_input,crops,num_nivel_tecnologico):
 
 
 #----------- crea un nueva copia del output  ----------
-def copy_out(crops,num_nivel_tecnologico):
-    f= open("C:/DSSAT47/Sequence/output.txt","r")
+def copy_out(name_input,crops,num_nivel_tecnologico):
+    name_input_cut = get_the_last_8_characters_SQX(name_input)
+    path = os.path.join(my_path, 'results_files/temporary_files/' + name_input_cut + '.OSU')
+    f= open(path,'r')
     lines = f.readlines()
     sequence = get_sequence_name(crops)
     name_nivel_tecnologico = get_name_nivel_tecnologico(num_nivel_tecnologico)
-    path = os.path.join(my_path, 'results_files/output/output'+ '_' + sequence + '_' + name_nivel_tecnologico + '.txt')
+    path = os.path.join(my_path, 'results_files/output/output' + '_' + sequence + '_' + name_nivel_tecnologico + '.OSU')
     out = open(path, 'w')
     out.writelines(lines)
-    out.close()     
+    out.close() 
 
 
-def there_is_performance_on_the_line(line):
-    b = 'MZ' in line or 'SB' in line or 'WH' in line
+def there_is_performance_on_the_line(line,name_input_cut,crops):
+    b = name_input_cut in line and line.split()[8] in crops
     return b    
 
+
+def there_is_barbecho_on_the_line(line):
+    b = 'Barbecho' in line
+    return b    
+
+
+def get_coefficient_of_crop(coefficients,current_crop,technological_level):
+    return float(coefficients[current_crop][technological_level])  
+    
 
 #------------ obtengo los coeficientes de todos los cultivos para un nivel tecnologico -----------------
 def get_all_coefficients():
