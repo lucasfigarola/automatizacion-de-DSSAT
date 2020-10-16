@@ -25,7 +25,7 @@ La herramienta de automatización fue desarrollada en **Python 3**.
 
 Es necesario contar con una instalación de **DSSAT**, solo disponible para Microsoft Windows. Para descargar DSSAT es necesario ingresar a la página (https://apps.agapps.org/ide/serial/index.php/request?sft=3) y solicitar a los desarrolladores el envío del instalador por correo electrónico. Junto con el instalador se envian los manuales de instrucciones así como referencias de uso del software.
 
-![DSSAT](DSSAT_Main.png)
+![DSSAT](/img/DSSAT_Main.png)
 
 ## Insumos
 
