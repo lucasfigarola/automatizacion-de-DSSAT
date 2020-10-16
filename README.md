@@ -41,23 +41,23 @@ Es necesario contar con una instalación de **DSSAT**, solo disponible para Micr
   Se debe respetar los ids de cada cultivo. Ejemplo:
   Para la matriz treatments los valores de CU, MP, MF deben corresponder al valor del id del cultivo. En este ejemplo el id de Soja es 3. 
   
-  ![DSSAT](treatments.png)
+  ![DSSAT](/img/treatments.png)
   
   En cultivar el @C debe ser el id del cultivo.
   
-  ![DSSAT](cultivars.png)
+  ![DSSAT](/img/cultivars.png)
   
   En planting details el @P debe ser el id del cultivo.
   
-  ![DSSAT](planting.png)
+  ![DSSAT](/img/planting.png)
   
   En fertilizers el @F debe ser el id del cultivo.
   
-  ![DSSAT](fertilizers.png)
+  ![DSSAT](/img/fertilizers.png)
   
   En harvest details el @H debe ser el id del cultivo.
   
-  ![DSSAT](harvest_details.png)
+  ![DSSAT](/img/harvest_details.png)
 
 ## Instrucciones para correr la herramienta
  
