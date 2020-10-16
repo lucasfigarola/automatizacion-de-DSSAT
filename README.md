@@ -1,9 +1,13 @@
-# Herramienta de automatización DSSAT
+# Herramienta para automatización de DSSAT
 
 - Lucas A. Figarola: lfigarola@dc.uba.ar 
 - Felipe Ghersa: felipeghersa@agro.uba.ar
 - Rodrigo Castro: rcastro@dc.uba.ar
 - Diego O. Ferraro: ferraro@agro.uba.ar
+
+*Universidad de Buenos Aires (UBA), Facultad de Ciencias Exactas y Naturales, Departamento de Computación. CONICET, Instituto de Ciencias de la Computación (ICC)*
+
+*Universidad de Buenos Aires (UBA), Facultad de Agronomía, Cátedra de Cerealicultura. UBA-CONICET, Instituto de Investigaciones Fisiológicas y Ecológicas Vinculadas a la Agricultura (IFEVA)*
 
 ## Acerca de:
 Automatización del modelo de simulación de cultivos DSSAT es una herramienta creada en python que automatiza la generación de archivos requeridos por DSSAT para correr modelos.
@@ -21,7 +25,7 @@ La herramienta de automatización fue desarrollada en **Python 3**.
 
 Es necesario contar con una instalación de **DSSAT**, solo disponible para Microsoft Windows. Para descargar DSSAT es necesario ingresar a la página (https://apps.agapps.org/ide/serial/index.php/request?sft=3) y solicitar a los desarrolladores el envío del instalador por correo electrónico. Junto con el instalador se envian los manuales de instrucciones así como referencias de uso del software.
 
-
+![DSSAT](DSSAT_Main.png)
 
 ## Insumos
 
