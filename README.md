@@ -36,7 +36,18 @@ Es necesario contar con una instalación de **DSSAT**, solo disponible para Micr
 - SQX inicial
 - Matriz de restricciones
 
-## Instrucciones para correr la herramienta
+## Requerimientos .SQX
 
+  Se debe respetar los ids de cada cultivo.
+  
+  ![DSSAT](treatments.png)
+  
+  ![DSSAT](cultivars.png)
+  
+  ![DSSAT](planting.png)
+
+## Instrucciones para correr la herramienta
+ 
+ Ejecutar el archivo script.py
 
 ## Salida: Prueba de Concepto
