@@ -43,15 +43,21 @@ Es necesario contar con una instalación de **DSSAT**, solo disponible para Micr
   
   ![DSSAT](treatments.png)
   
-  En cultivar lo mismo.
+  En cultivar el @C debe ser el id del cultivo.
   
   ![DSSAT](cultivars.png)
   
-  En planting details lo mismo.
+  En planting details el @P debe ser el id del cultivo.
   
   ![DSSAT](planting.png)
   
+  En fertilizers el @F debe ser el id del cultivo.
   
+  ![DSSAT](fertilizers.png)
+  
+  En harvest details el @H debe ser el id del cultivo.
+  
+  ![DSSAT](harvest_details.png)
 
 ## Instrucciones para correr la herramienta
  
