@@ -39,7 +39,7 @@ Es necesario contar con una instalación de **DSSAT**, solo disponible para Micr
 ## Requerimientos .SQX
 
   Se debe respetar los ids de cada cultivo. Ejemplo:
-  Para la matriz treatments los valores de CU, MP, MF deben corresponder al valor del id del cultivo. En este ejemplo el id de Soja es 3. 
+  Para la matriz treatments los valores de CU, MP, MF deben corresponder al valor del id del cultivo. Ademas se debe tener dos lineas para esta matriz como en el siguiente ejemplo:
   
   ![DSSAT](/img/treatments.png)
   
