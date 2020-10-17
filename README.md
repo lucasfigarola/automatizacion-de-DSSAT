@@ -52,7 +52,7 @@ Antes de poder utilizar el programa de automatización es necesario generar los 
 
 El archivo de suelo contiene un conjunto de parámetros acerca de textura, profundidad, y otras características fisicoquímicas que serán utilizadas por los modulos de DSSAT para simular el rendimiento de un cultivo. Abajo se puede ver un ejemplo de un archivo de suelo (para detalle sobre el significado de cada parámetro ver manual de DSSAT).
 
-
+![suelo](/img/suelo.png)
 
 - Clima (.WHT)
 
