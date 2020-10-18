@@ -14,8 +14,6 @@ def calculate_values_for_graphics_performance_by_promedio(cultivos,performance,n
 
 def calculate_values_for_graphics_by_year(cultivos,values,nivel_tecnologico,first_year,cant_years,name):
     sequence = get_sequence_name(cultivos)
-    print(cultivos)
-    print(sequence)
     name_nivel_tecnologico = get_name_nivel_tecnologico(nivel_tecnologico)
     path = os.path.join(my_path, 'results/' + name + 'Original' + '_' + str(cant_years) + '_' + sequence + '_' + name_nivel_tecnologico + '.txt' )
     f = open(path,'w')
