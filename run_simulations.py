@@ -6,18 +6,18 @@ from calculation_results import *
 import re
 
 
-def varying_technological_level(input_name,cultivos,cultivo_ids,coefficients):
+def varying_technological_level(input_name,crops,crops_ids,coefficients):
     numero_de_niveles = 1 # cantidad incremental de niveles tecnologicos
     porcentaje_fijo = 30/numero_de_niveles
-    niveles_tecnologicos_medios = get_fertilizer_value(input_name,cultivos)
+    niveles_tecnologicos_medios = get_fertilizer_value(input_name,crops)
     niveles_tecnologicos_bajos = calcular_nivel_tecnologico_bajo(niveles_tecnologicos_medios)  #calculo el valor de fertilizante inicial (minimo)
     niveles_tecnologicos_altos = calcular_nivel_tecnologico_alto(niveles_tecnologicos_medios)  #calculo el valor de fertilizante maximo
     valores_fertilizantes_incrementales = calcular_valor_fertilizante_incremental(niveles_tecnologicos_medios,porcentaje_fijo)  #calculo el valor de fertilizante que se ira sumando
 
-    run_varying_ferlitizer(input_name,cultivos,coefficients,niveles_tecnologicos_bajos,niveles_tecnologicos_altos,valores_fertilizantes_incrementales)
+    run_varying_ferlitizer(input_name,crops,coefficients,niveles_tecnologicos_bajos,niveles_tecnologicos_altos,valores_fertilizantes_incrementales)
 
 
-def run_varying_ferlitizer(name_input,cultivos,coefficients,niveles_tecnologicos_bajos,niveles_tecnologicos_altos,valores_fertilizantes_incrementales):
+def run_varying_ferlitizer(name_input,crops,coefficients,niveles_tecnologicos_bajos,niveles_tecnologicos_altos,valores_fertilizantes_incrementales):
     f= open('C:/DSSAT47/Sequence/' + name_input + '.SQX','r')
     lines = f.readlines()
     actuales_valores_fertilizantes = niveles_tecnologicos_bajos
@@ -29,7 +29,7 @@ def run_varying_ferlitizer(name_input,cultivos,coefficients,niveles_tecnologicos
         print('Valores de fertilizante: ', actuales_valores_fertilizantes)
         for i, l in enumerate(lines):
             info = l.split() 
-            if checker and info[11] in cultivos:
+            if checker and info[11] in crops:
                 actual_cultivo = info[11]
                 actual_valor_fertilizante = actuales_valores_fertilizantes[actual_cultivo]
                 if actual_valor_fertilizante < 10:
@@ -44,15 +44,15 @@ def run_varying_ferlitizer(name_input,cultivos,coefficients,niveles_tecnologicos
         out = open('C:/DSSAT47/Sequence/' + name_input + '.SQX', 'w')
         out.writelines(lines)
         out.close()
-        copy_SQX(name_input,cultivos,nivel_tecnologico)
+        copy_SQX(name_input,crops,nivel_tecnologico)
         dssat_run()
-        copy_out(name_input,cultivos,nivel_tecnologico)
-        calculate_values_for_graphics(name_input,cultivos,coefficients,nivel_tecnologico,first_year)
+        copy_out(name_input,crops,nivel_tecnologico)
+        calculate_values_for_graphics(name_input,crops,coefficients,nivel_tecnologico,first_year)
         actuales_valores_fertilizantes = actualizar_valores_fertilizantes(actuales_valores_fertilizantes,valores_fertilizantes_incrementales)
-    graficar_resultados(cultivos)
+    graphic_results(crops)
 
 
-def graficar_resultados(cultivos):
+def graphic_results(cultivos):
     sequence = get_sequence_name(cultivos)
     create_graphics(sequence)
 
@@ -61,16 +61,16 @@ def create_graphics(sequence):
 
     for i in range(cant_years_to_evalue):
         cant_years = 6*(i+1)
-        create_graphic_rendimiento_original(sequence,cant_years)
-        create_graphic_rendimiento_promedio(sequence,cant_years)
+        create_graphic_yield_original(sequence,cant_years)
+        create_graphic_yield_promedio(sequence,cant_years)
 
 
 
 #-------------- crear grafico original ---------------
-def create_graphic_rendimiento_original(sequence,cant_years):
+def create_graphic_yield_original(sequence,cant_years):
     create_graphic_standard('Rendimiento','RendimientoOriginal',sequence,cant_years)
 
 
 #-------------- crear grafico promedio ---------------
-def create_graphic_rendimiento_promedio(sequence,cant_years):
+def create_graphic_yield_promedio(sequence,cant_years):
     create_graphic_standard('Rendimiento','RendimientoPromedio',sequence,cant_years)

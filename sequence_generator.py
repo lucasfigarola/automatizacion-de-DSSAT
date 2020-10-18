@@ -135,28 +135,28 @@ def es_valida_la_combinacion(secuencia,dicc_index,matriz_de_restricciones):
     return True
 
 
-def repeated(secuencia):
-    if len(secuencia) == 2:
+def repeated(sequence):
+    if len(sequence) == 2:
         return False
-    secuencia = delete_barbecho(secuencia)
-    if secuencia.count(secuencia[0]) == len(secuencia):
+    sequence = delete_barbecho(sequence)
+    if sequence.count(sequence[0]) == len(sequence):
         return True
     else:
         return False
 
 
-def delete_barbecho(secuencia):
-    secuencia_without_barbecho =[]
-    for i in range(len(secuencia)):
-        if secuencia[i].first_crop != 'Barbecho':
-            secuencia_without_barbecho.append(secuencia[i])
-    return secuencia_without_barbecho
+def delete_barbecho(sequence):
+    sequence_without_barbecho =[]
+    for i in range(len(sequence)):
+        if sequence[i].first_crop != 'Barbecho':
+            sequence_without_barbecho.append(sequence[i])
+    return sequence_without_barbecho
 
 
-def get_list_crop(secuencia):
+def get_list_crop(sequence):
     list_crop = []
-    for i in range(len(secuencia)):
-        list_crop = list_crop + secuencia[i].get_crop_list()
+    for i in range(len(sequence)):
+        list_crop = list_crop + sequence[i].get_crop_list()
     return list_crop
 
 

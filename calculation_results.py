@@ -1,24 +1,24 @@
 from calculations_graphic_aux import *
 import csv
 
-def calculate_values_for_graphics(name_input,crops,coefficients,nivel_tecnologico,first_year):
+def calculate_values_for_graphics(name_input,crops,coefficients,technological_level,first_year):
     #----------- calcula los valores de Rendimiento, Rentabilidad y Emergy para graficar  ----------
-    crops_without_barbecho = remove_barbecho_from_sequence(crops)
     cant_years_to_evalue = 4
 
     for i in range(cant_years_to_evalue):
         cant_years = 6*(i+1)
         #---------------- calcular los valores para graficar de rendimiento y rentabilidad (aux) ------------
-        calculate_values_for_graphics_performance(name_input,crops_without_barbecho,coefficients,nivel_tecnologico,first_year,cant_years)
+        calculate_values_for_graphics_performance(name_input,crops,coefficients,technological_level,first_year,cant_years)
 
 
 
-def calculate_values_for_graphics_performance(name_input,crops,coefficients,nivel_tecnologico,first_year,cant_years):
+def calculate_values_for_graphics_performance(name_input,crops,coefficients,technological_level,first_year,cant_years):
     #----------- obtengo todos los valores del rendimiento multiplicado por el coeficiente -------------
-    performance = get_all_performance(name_input,crops,coefficients,nivel_tecnologico)
+    crops_without_barbecho = remove_barbecho_from_sequence(crops)
+    performance = get_all_performance(name_input,crops_without_barbecho,coefficients,technological_level)
     #----------- calculo los valores de rendimiento por año y promedio -------------
-    calculate_values_for_graphics_performance_by_year(crops,performance,nivel_tecnologico,first_year,cant_years)
-    calculate_values_for_graphics_performance_by_promedio(crops,performance,nivel_tecnologico,first_year,cant_years)
+    calculate_values_for_graphics_performance_by_year(crops,performance,technological_level,first_year,cant_years)
+    calculate_values_for_graphics_performance_by_promedio(crops,performance,technological_level,first_year,cant_years)
 
 
 #------------ obtengo todos los rendimientos -----------------
@@ -41,6 +41,5 @@ def get_all_performance(name_input,crops,coefficients,technological_level):
         if there_is_barbecho_on_the_line(l):
             performance.append(float(current_yield))
             current_yield = 0
-    performance.append(float(current_yield)) # agrego el ultimo rendimiento
     f.close()
     return performance

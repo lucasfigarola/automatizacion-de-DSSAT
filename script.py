@@ -40,48 +40,48 @@ def run_generator_sequences(input_name):
     modify_batch(input_name)
 
     line_treatments = num_line_TREATMENTS(input_name_original)
-    cultivo_ids = create_dicc_ids(input_name)
+    crop_ids = create_dicc_ids(input_name)
     coefficients = get_all_coefficients()
 
-    cultivos = ['Soja','Barbecho']
-    total_function(input_name,cultivos,cultivo_ids,coefficients)
+    crops = ['Soja','Barbecho']
+    total_function(input_name,crops,crop_ids,coefficients)
 
-    cultivos = ['Maiz','Barbecho']
-    total_function(input_name,cultivos,cultivo_ids,coefficients)
+    crops = ['Maiz','Barbecho']
+    total_function(input_name,crops,crop_ids,coefficients)
 
-    cultivos = ['Trigo','Barbecho']
-    total_function(input_name,cultivos,cultivo_ids,coefficients)
+    crops = ['Trigo','Barbecho']
+    #total_function(input_name,crops,crop_ids,coefficients)
 
 
-    numero_linea = 2
-    add_line(input_name,numero_linea,line_treatments)
-    numero_linea += 1
+    num_line = 2
+    add_line(input_name,num_line,line_treatments)
+    num_line += 1
 
-    cultivos = ['Trigo','Soja2','Barbecho']
-    total_function(input_name,cultivos,cultivo_ids,coefficients)
+    crops = ['Trigo','Soja2','Barbecho']
+    total_function(input_name,crops,crop_ids,coefficients)
 
-    add_line(input_name,numero_linea,line_treatments)
-    numero_linea += 1
+    add_line(input_name,num_line,line_treatments)
+    num_line += 1
 
-    cultivos = ['Maiz','Barbecho','Soja','Barbecho']
-    total_function(input_name,cultivos,cultivo_ids,coefficients)
+    crops = ['Maiz','Barbecho','Soja','Barbecho']
+    total_function(input_name,crops,crop_ids,coefficients)
 
-    cultivos = ['Soja','Barbecho','Trigo','Barbecho']
-    #total_function(input_name,cultivos,cultivo_ids,coefficients)
+    crops = ['Soja','Barbecho','Trigo','Barbecho']
+    #total_function(input_name,crops,crop_ids,coefficients)
 
-    cultivos = ['Maiz','Barbecho','Trigo','Barbecho']
-    #total_function(input_name,cultivos,cultivo_ids,coefficients)
+    crops = ['Maiz','Barbecho','Trigo','Barbecho']
+    #total_function(input_name,crops,crop_ids,coefficients)
 
-    add_line(input_name,numero_linea,line_treatments)
-    numero_linea += 1
-    add_line(input_name,numero_linea,line_treatments)
-    numero_linea += 1
+    add_line(input_name,num_line,line_treatments)
+    num_line += 1
+    add_line(input_name,num_line,line_treatments)
+    num_line += 1
 
-    cultivos = ['Maiz','Barbecho','Trigo','Barbecho','Soja','Barbecho']
-    total_function(input_name,cultivos,cultivo_ids,coefficients)
+    crops = ['Maiz','Barbecho','Trigo','Barbecho','Soja','Barbecho']
+    total_function(input_name,crops,crop_ids,coefficients)
 
-    cultivos = ['Trigo','Soja2','Barbecho','Trigo','Soja2','Barbecho']
-    #total_function(input_name,cultivos,cultivo_ids,coefficients)
+    crops = ['Trigo','Soja2','Barbecho','Trigo','Soja2','Barbecho']
+    #total_function(input_name,crops,crop_ids,coefficients)
 
 
 
@@ -97,9 +97,9 @@ def run_for_different_tech_levels(input_name,crops,crop_ids,coefficients):
     copy_input(name_input_original,input_name)
 
 
-def crear_backup_input(nombre_input):
-    input_name_original = nombre_input + 'Original'
-    copy_input(nombre_input,input_name_original)
+def crear_backup_input(name_input):
+    input_name_original = name_input + 'Original'
+    copy_input(name_input,input_name_original)
     return input_name_original
 
 
