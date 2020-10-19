@@ -56,10 +56,19 @@ El archivo de suelo contiene un conjunto de parámetros acerca de textura, profu
 
 - Clima (.WHT)
 
+![cli](/img/CLI.png)
+
+![wth](/img/WTH.png)
+
 - Genotipo (.CUL)
 
+![cul](/img/cul.png)
+
 - SQX inicial
+
 - Matriz de restricciones
+
+![mdr](/img/mdr.png)
 
 ## Requerimientos .SQX
 
