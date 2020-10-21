@@ -54,28 +54,34 @@ Antes de poder utilizar el programa de automatización es necesario generar los 
 
 El archivo de suelo contiene un conjunto de parámetros acerca de textura, profundidad, y otras características fisicoquímicas que serán utilizadas por los modulos de DSSAT para simular el rendimiento de un cultivo. Abajo se puede ver un ejemplo de un archivo de suelo para la localidad de Pergamino (para detalle sobre el significado de cada parámetro ver manual de DSSAT).
 
+***Tabla 1:** Archivo de suelo para la localidad de Pergamino*
+
 ![suelo](/img/suelo.png)
 
 - **Clima (.WHT)**
 
 Los modelos de DSSAT permiten simular el rendimiento de cultivos a partir de series climáticas reales o simuladas estocasticamente a partir de parámetros climáticos mensuales para un sitio. Utilizando la aplicación *WeatherMan* incorporada a la interfaz gráfica del programa se pueden generar dos tipos de archivos. Por un lado, la aplicación permite cargar datos climáticos reales en una planilla y luego genera para cada año el archivo correspondiente (.WTH). También, es posible cargar parámetros climáticos mensuales (.CLI) a partir de los cuales DSSAT genera archivos (.WTH). Abajo se presentan dos ejemplos de este tipo de archvios.
 
-Archivo *.CLI* para la localidad de Pergamino. Promedio mensuales corresponden a la serie 1967-2007.
+***Tabla 2:** Parámetros climáticos mensuales para la localidad de Pergamino. Promedio mensuales corresponden a la serie 1967-2007.**
 
 ![cli](/img/CLI.png)
 
 
-Archivo *.WTH* para el año 1967 en la localidad de Pergamino. Se muestran los primeros y últimos días del año (el archivo debe contener registro de los 365 días para cada año. Los parámetros mínimos necesarios son SRAD: radiación solar, TMAX: temperatura máxima, TMIN: temperatura mínima y RAIN: precipitación.
+***Tabla 3:** Parámetros climáticos para el año 1967 en la localidad de Pergamino. Se muestran los primeros y últimos días del año (el archivo debe contener registro de los 365 días para cada año. Los parámetros mínimos necesarios son SRAD: radiación solar, TMAX: temperatura máxima, TMIN: temperatura mínima y RAIN: precipitación.*
 
 ![wth](/img/WTH.png)
 
 - **Genotipo (.CUL)**
+
+***Tabla 4:** Descripción de parámetros genéticos para maíz (Cultivar: DK682)**
 
 ![cul](/img/cul.png)
 
 - **SQX inicial**
 
 - **Matriz de restricciones**
+
+***Tabla 5:** Matriz de restricciones**
 
 ![mdr](/img/mdr.png)
 
@@ -111,7 +117,8 @@ En script.py estan las principales funciones para correr el script. Hay dos opci
 
 ## Salida: Prueba de Concepto
 
-Se realizó una prueba de concepto para en la localidad de Pergamino. Se generaron todas las secuencias posibles de Trigo, Maiz, Soja y Trigo/Soja (n=90) y se simularon durante 30 años (1967-1997). Para cada cultivo se utilizaron cultivares previamente validados bajo fecha de siembra y densidad óptima para la región (Merlos et al. 2015). 
+Se realizó una prueba de concepto para en la localidad de Pergamino. Se generaron todas las secuencias posibles de Trigo, Maiz, Soja y Trigo/Soja (n=90) y se simularon durante 30 años (1967-1997). Para cada cultivo se utilizaron cultivares previamente validados bajo fecha de siembra y densidad óptima para la región (Merlos et al. 2015). Cada secuencia se simuló bajo tres niveles tecnológicos (i.e. dosis de fertilizante nitrogenado anual para cada cultivo). Los niveles alto y bajo se construyeron a partir de aplicar +/-30% al nivel medio. Nivles medio fueron para soja: 0kg/ha, trigo: 200kg/ha, maiz:180kg/ha.
 
 ![mv](/img/mean_variance_dssat.png)
 
+***Figura 4:** Relación entre el coeficiente de variación y el promedio anual del rendimiento alcanzable para secuencias posibles de maiz, trigo, soja y trigo/soja en la localidad de Pergamino bajo tres niveles tecnológicos (i.e. dosis de fertilizante). Las lineas rojas punteadas indican la mediana para cada uno de los ejes y las lineas enteras azules son los cuartiles 25 y 75.
