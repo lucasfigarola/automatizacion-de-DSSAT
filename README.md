@@ -48,25 +48,30 @@ Es necesario contar con una instalación de **DSSAT**, solo disponible para Micr
 
 Antes de poder utilizar el programa de automatización es necesario generar los archivos de clima (.WTH), suelo (.SOL), genotipo (.CUL), el archivos .SQX inicial y una matriz de restricciones en la que se definen los cultivos utilizdos, las transiciones posibles y el numero máximo de cultivos en una secuencia o rotación.
 
-- Suelo (.SOL)
+- **Suelo (.SOL)**
 
 El archivo de suelo contiene un conjunto de parámetros acerca de textura, profundidad, y otras características fisicoquímicas que serán utilizadas por los modulos de DSSAT para simular el rendimiento de un cultivo. Abajo se puede ver un ejemplo de un archivo de suelo (para detalle sobre el significado de cada parámetro ver manual de DSSAT).
 
 ![suelo](/img/suelo.png)
 
-- Clima (.WHT)
+- **Clima (.WHT)**
 
+Los modelos de DSSAT permiten simular el rendimiento de cultivos a partir de series climáticas reales o simuladas estocasticamente a partir de parámetros climáticos mensuales para un sitio. Utilizando la aplicación *WeatherMan* incorporada a la interface gráfica del programa se pueden generar dos tipos de archivos. Por un lado, la aplicación permite cargar datos climáticos reales en una planilla y luego genera para cada año el archivo correspondiente (.WTH). También, es posible cargar parámetros climáticos mensuales (.CLI) a partir de los cuales DSSAT genera archivos (.WTH). Abajo se presentan dos ejemplos de este tipo de archvios.
+
+Archivo *.CLI* para la localidad de Pergamino. Promedio mensuales corresponden a la serie 1967-2007.
 ![cli](/img/CLI.png)
 
+
+Archivo *.WTH* para el año 1967 en la localidad de Pergamino. Se muestran los primeros y últimos días del año (el archivo debe contener registro de los 365 días para cada año. Los parámetros mínimos necesarios son SRAD: radiación solar, TMAX: temperatura máxima, TMIN: temperatura mínima y RAIN: precipitación.
 ![wth](/img/WTH.png)
 
-- Genotipo (.CUL)
+- **Genotipo (.CUL)**
 
 ![cul](/img/cul.png)
 
-- SQX inicial
+- **SQX inicial**
 
-- Matriz de restricciones
+- **Matriz de restricciones**
 
 ![mdr](/img/mdr.png)
 
