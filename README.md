@@ -101,3 +101,5 @@ El archivo de suelo contiene un conjunto de parámetros acerca de textura, profu
 En script.py estan las principales funciones para correr el script. Hay dos opciones para correr: La funcion script_sequences que corre DSSAT para cada secuencia generada en el sequence_generator. La funcion run_generator_sequences que corre DSSAT para secuencias especificas que quieras probar. 
 
 ## Salida: Prueba de Concepto
+
+![mv](/img/mean_variance_dssat.png)
