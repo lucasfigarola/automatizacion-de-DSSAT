@@ -44,19 +44,21 @@ Es necesario contar con una instalación de **DSSAT**, solo disponible para Micr
 
 ![DSSAT](/img/DSSAT_Main.png)
 
+***Figura 3:** Ventana de inicio de la interfaz gráfica de DSSAT*
+
 ## Insumos
 
 Antes de poder utilizar el programa de automatización es necesario generar los archivos de clima (.WTH), suelo (.SOL), genotipo (.CUL), el archivos .SQX inicial y una matriz de restricciones en la que se definen los cultivos utilizdos, las transiciones posibles y el numero máximo de cultivos en una secuencia o rotación.
 
 - **Suelo (.SOL)**
 
-El archivo de suelo contiene un conjunto de parámetros acerca de textura, profundidad, y otras características fisicoquímicas que serán utilizadas por los modulos de DSSAT para simular el rendimiento de un cultivo. Abajo se puede ver un ejemplo de un archivo de suelo (para detalle sobre el significado de cada parámetro ver manual de DSSAT).
+El archivo de suelo contiene un conjunto de parámetros acerca de textura, profundidad, y otras características fisicoquímicas que serán utilizadas por los modulos de DSSAT para simular el rendimiento de un cultivo. Abajo se puede ver un ejemplo de un archivo de suelo para la localidad de Pergamino (para detalle sobre el significado de cada parámetro ver manual de DSSAT).
 
 ![suelo](/img/suelo.png)
 
 - **Clima (.WHT)**
 
-Los modelos de DSSAT permiten simular el rendimiento de cultivos a partir de series climáticas reales o simuladas estocasticamente a partir de parámetros climáticos mensuales para un sitio. Utilizando la aplicación *WeatherMan* incorporada a la interface gráfica del programa se pueden generar dos tipos de archivos. Por un lado, la aplicación permite cargar datos climáticos reales en una planilla y luego genera para cada año el archivo correspondiente (.WTH). También, es posible cargar parámetros climáticos mensuales (.CLI) a partir de los cuales DSSAT genera archivos (.WTH). Abajo se presentan dos ejemplos de este tipo de archvios.
+Los modelos de DSSAT permiten simular el rendimiento de cultivos a partir de series climáticas reales o simuladas estocasticamente a partir de parámetros climáticos mensuales para un sitio. Utilizando la aplicación *WeatherMan* incorporada a la interfaz gráfica del programa se pueden generar dos tipos de archivos. Por un lado, la aplicación permite cargar datos climáticos reales en una planilla y luego genera para cada año el archivo correspondiente (.WTH). También, es posible cargar parámetros climáticos mensuales (.CLI) a partir de los cuales DSSAT genera archivos (.WTH). Abajo se presentan dos ejemplos de este tipo de archvios.
 
 Archivo *.CLI* para la localidad de Pergamino. Promedio mensuales corresponden a la serie 1967-2007.
 
@@ -109,4 +111,7 @@ En script.py estan las principales funciones para correr el script. Hay dos opci
 
 ## Salida: Prueba de Concepto
 
+Se realizó una prueba de concepto para en la localidad de Pergamino. Se generaron todas las secuencias posibles de Trigo, Maiz, Soja y Trigo/Soja (n=90) y se simularon durante 30 años (1967-1997). Para cada cultivo se utilizaron cultivares previamente validados bajo fecha de siembra y densidad óptima para la región (Merlos et al. 2015). 
+
 ![mv](/img/mean_variance_dssat.png)
+
