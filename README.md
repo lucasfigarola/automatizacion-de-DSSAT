@@ -121,4 +121,4 @@ Se realizó una prueba de concepto para en la localidad de Pergamino. Se generar
 
 ![mv](/img/mean_variance_dssat.png)
 
-***Figura 4:** Relación entre el coeficiente de variación y el promedio anual del rendimiento alcanzable para secuencias posibles de maiz, trigo, soja y trigo/soja en la localidad de Pergamino bajo tres niveles tecnológicos (i.e. dosis de fertilizante). Las lineas rojas punteadas indican la mediana para cada uno de los ejes y las lineas enteras azules son los cuartiles 25 y 75.
+***Figura 4:** Relación entre el coeficiente de variación y el promedio anual del rendimiento alcanzable para secuencias posibles de maiz, trigo, soja y trigo/soja en la localidad de Pergamino bajo tres niveles tecnológicos (i.e. dosis de fertilizante). Las lineas rojas punteadas indican la mediana para cada uno de los ejes y las lineas enteras azules son los cuartiles 25 y 75. El tamaño de los círculos indica la intensidad de las secuencias (i.e. número de cultivos por año).
