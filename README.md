@@ -117,7 +117,7 @@ En script.py estan las principales funciones para correr el script. Hay dos opci
 
 ## Salida: Prueba de Concepto
 
-Se realizó una prueba de concepto para en la localidad de Pergamino. Se generaron todas las secuencias posibles de Trigo, Maiz, Soja y Trigo/Soja (n=90) y se simularon durante 30 años (1967-1997). Para cada cultivo se utilizaron cultivares previamente validados bajo fecha de siembra y densidad óptima para la región (Merlos et al. 2015). Cada secuencia se simuló bajo tres niveles tecnológicos (i.e. dosis de fertilizante nitrogenado anual para cada cultivo). Los niveles alto y bajo se construyeron a partir de aplicar +/-30% al nivel medio. Nivles medio fueron para soja: 0kg/ha, trigo: 200kg/ha, maiz:180kg/ha.
+Se realizó una prueba de concepto para en la localidad de Pergamino. Se generaron todas las secuencias posibles de Trigo, Maiz, Soja y Trigo/Soja (n=90) y se simularon durante 30 años (1967-1997). Para cada cultivo se utilizaron cultivares previamente validados bajo fecha de siembra y densidad óptima para la región (Merlos et al. 2015). Cada secuencia se simuló bajo tres niveles tecnológicos (i.e. dosis de fertilizante nitrogenado anual para cada cultivo). Los niveles alto y bajo se construyeron a partir de aplicar +/-30% al nivel medio. Niveles medio fueron para soja: 0kg/ha, trigo: 200kg/ha, maiz:180kg/ha. Para poder compara los rendimientos de distintos cultivos se transformaron las t/ha a mj/ha.
 
 ![mv](/img/mean_variance_dssat.png)
 
