@@ -1,8 +1,8 @@
 ,Maiz,Maiz2,Soja,Soja2,Girasol,Trigo,Colza,Arveja,Vicia Faba (CC),Centeno (CC),Avena (CC),Barbecho
 Maiz,0,0,0,0,0,0,0,0,1,1,1,1
-Maiz2,0,0,0,0,0,1,1,1,1,1,1,1
+Maiz2,0,0,0,0,0,0,0,0,1,1,1,1
 Soja,0,0,0,0,0,0,0,0,1,1,1,1
-Soja2,0,0,0,0,0,1,1,1,1,1,1,1
+Soja2,0,0,0,0,0,0,0,0,1,1,1,1
 Girasol,0,0,0,0,0,0,0,0,1,1,1,1
 Trigo,0,1,0,1,0,0,0,0,0,0,0,1
 Colza,0,1,0,1,0,0,0,0,0,0,0,1
