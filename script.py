@@ -9,6 +9,7 @@ import re
 import os
 import glob
 
+max_line_treatments = 12
 
 def script_sequences(name_input):
     create_batch()
@@ -22,7 +23,7 @@ def script_sequences(name_input):
     coefficients = get_all_coefficients()
     dicc_sequence = sequenceGenerator()
     num_line = 2
-    for i in range(2,13):
+    for i in range(2,max_line_treatments):
         sequences = dicc_sequence[i]
         for j in range(len(sequences)):
             crops = sequences[j]
